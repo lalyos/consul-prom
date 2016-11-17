@@ -16,6 +16,7 @@ RUN mv /tmp/prometheus-1.3.1.linux-amd64/console_libraries /usr/share/prometheus
 RUN mv /tmp/prometheus-1.3.1.linux-amd64/consoles /usr/share/prometheus
 RUN rm -rf /tmp/*
 RUN rm -rf /var/cache/apk/*
+RUN apk add -U jq
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
