@@ -1,4 +1,4 @@
-FROM        alpine
+FROM        alpine:3.4
 MAINTAINER  deathowl <deathowlzz@gmail.com>
 RUN apk add --update curl bash ca-certificates openssl && update-ca-certificates 
 RUN wget https://releases.hashicorp.com/consul-template/0.16.0/consul-template_0.16.0_linux_amd64.zip -O /tmp/consul-template_0.16.0_linux_amd64.zip
