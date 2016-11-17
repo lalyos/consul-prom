@@ -7,7 +7,7 @@ rm -f /opt/prometheus/data/DIRTY
 /usr/local/bin/prometheus -config.file=/etc/prometheus/prometheus.yml -web.external-url=https://$PUBLIC_IP/prom/ -storage.local.path=/opt/prometheus/data &
 sleep 5
 
-curl consul.service.consul:8500/v1/kv/prometheus-entrypoint.sh | jq .[].Value -r | base64 -d
+curl consul.service.consul:8500/v1/kv/prometheus-entrypoint.sh | jq .[].Value -r | base64 -d | sh
 
 : << KOMMENT
 /usr/local/bin/consul-template \
